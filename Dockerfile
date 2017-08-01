@@ -29,7 +29,7 @@ USER root
 #==================
 # Chrome webdriver
 #==================
-ARG CHROME_DRIVER_VERSION=2.30
+ARG CHROME_DRIVER_VERSION=2.31
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
   && rm -rf /opt/selenium/chromedriver \
   && unzip /tmp/chromedriver_linux64.zip -d /opt/selenium \
@@ -60,7 +60,7 @@ RUN set -x  \
  && mkdir /tmp/phantomjs \
  && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
         | tar -xj --strip-components=1 -C /tmp/phantomjs \
- && mv /tmp/phantomjs/bin/phantomjs /usr/local/bin \
+ && mv /tmp/phantomjs/bin/phantomjs /usr/bin \
     # Install dumb-init (to handle PID 1 correctly).
     # https://github.com/Yelp/dumb-init
  && curl -Lo /tmp/dumb-init.deb https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64.deb \
